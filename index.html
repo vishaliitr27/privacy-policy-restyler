@@ -3,314 +3,200 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Privacy policy for the Restyler Chrome extension.">
-    <title>Restyler | Privacy Policy</title>
+    <meta name="description" content="Privacy policy for the Restyler Chrome extension. Your styles are stored only on your device, and Restyler makes no network requests.">
+    <meta name="color-scheme" content="light dark">
+    <title>Restyler Privacy Policy</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
+      /* Fonts are served from this repo, so the page itself makes no third-party requests. */
+      @font-face { font-family: 'Geist'; font-weight: 100 900; font-display: swap; src: url('fonts/geist.woff2') format('woff2'); }
+      @font-face { font-family: 'Geist Mono'; font-weight: 100 900; font-display: swap; src: url('fonts/geist-mono.woff2') format('woff2'); }
+      @font-face { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url('fonts/instrument-serif-italic.woff2') format('woff2'); }
+
+      /* The same palette as the extension's Bright and Dark themes. */
       :root {
         color-scheme: light;
-        --ink: #17221f;
-        --muted: #64716c;
-        --paper: #f6f5ef;
-        --panel: #fffdf7;
-        --line: #d9dfd8;
-        --accent: #bf4e2f;
-        --accent-soft: #f5ddd3;
-        --shadow: 0 24px 60px rgba(42, 54, 47, 0.1);
+        --bg: #fff9f6;
+        --panel: #ffffff;
+        --fg: #22163a;
+        --muted: #6e6485;
+        --line: rgba(76, 36, 120, 0.1);
+        --accent: #c2126b;
+        --accent-soft: rgba(255, 60, 172, 0.1);
+        --chip: rgba(123, 97, 255, 0.06);
+        --glow-violet: rgba(123, 97, 255, 0.16);
+        --glow-orange: rgba(255, 176, 32, 0.18);
+        --shadow: 0 1px 2px rgba(76, 36, 120, 0.06), 0 18px 48px -18px rgba(76, 36, 120, 0.22);
+        --brand: linear-gradient(135deg, #7b61ff 0%, #ff3cac 52%, #ffb020 100%);
       }
 
-      * {
-        box-sizing: border-box;
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --bg: #120c1f;
+          --panel: #1c1430;
+          --fg: #f5f0ff;
+          --muted: #b3a8cc;
+          --line: rgba(196, 170, 255, 0.12);
+          --accent: #ff5cb5;
+          --accent-soft: rgba(255, 60, 172, 0.16);
+          --chip: rgba(160, 130, 255, 0.08);
+          --glow-violet: rgba(123, 97, 255, 0.3);
+          --glow-orange: rgba(255, 138, 30, 0.12);
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 24px 56px -20px rgba(0, 0, 0, 0.7);
+        }
       }
+
+      * { box-sizing: border-box; }
+
+      html { background: var(--bg); }
 
       body {
-        min-width: 320px;
         margin: 0;
-        color: var(--ink);
+        min-height: 100vh;
+        color: var(--fg);
         background:
-          radial-gradient(circle at 8% 8%, rgba(191, 78, 47, 0.12), transparent 23rem),
-          linear-gradient(135deg, #f6f5ef 0%, #eef2eb 100%);
-        font-family: Georgia, "Times New Roman", serif;
-        line-height: 1.7;
+          radial-gradient(40rem 26rem at 0% 0%, var(--glow-violet), transparent 70%),
+          radial-gradient(36rem 24rem at 100% 8%, var(--glow-orange), transparent 70%),
+          var(--bg);
+        background-repeat: no-repeat;
+        font: 400 17px/1.65 'Geist', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
       }
 
-      .page {
-        width: min(100% - 2rem, 1120px);
-        margin: 0 auto;
-        padding: 2rem 0 4rem;
+      .page { width: min(100% - 32px, 760px); margin: 0 auto; padding: 28px 0 56px; }
+
+      .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .brand { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+      .brand img { width: 40px; height: 40px; border-radius: 10px; box-shadow: 0 6px 16px -6px rgba(224, 25, 125, 0.55); }
+      .wordmark { font: italic 400 30px/1 'Instrument Serif', ui-serif, Georgia, serif; letter-spacing: -0.01em; }
+      .tag { padding: 5px 12px; border-radius: 999px; background: var(--chip); border: 1px solid var(--line); color: var(--muted); font-size: 13px; font-weight: 500; white-space: nowrap; }
+
+      .hero { padding: 56px 0 32px; }
+      .eyebrow { margin: 0 0 14px; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+      h1 { margin: 0; font-size: clamp(38px, 7vw, 60px); line-height: 1.05; font-weight: 650; letter-spacing: -0.035em; text-wrap: balance; }
+      h1 em {
+        font: italic 400 1.12em/1 'Instrument Serif', ui-serif, Georgia, serif; letter-spacing: -0.01em;
+        background: var(--brand); -webkit-background-clip: text; background-clip: text; color: transparent;
+        padding-right: 0.06em;
       }
+      .intro { max-width: 34em; margin: 18px 0 0; color: var(--muted); font-size: 19px; line-height: 1.55; }
 
-      .masthead {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 4.5rem;
-        font-family: Arial, Helvetica, sans-serif;
-      }
+      .glance { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0 0 28px; padding: 0; list-style: none; }
+      .glance li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 15.5px; font-weight: 550; line-height: 1.3; }
+      .glance svg { flex: none; width: 34px; height: 34px; padding: 8px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); }
 
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.65rem;
-        color: var(--ink);
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
+      .policy { padding: 8px 36px; border-radius: 20px; background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+      .policy::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: var(--brand); }
+      .policy section { padding: 28px 0; }
+      .policy section + section { border-top: 1px solid var(--line); }
+      h2 { margin: 0 0 10px; font-size: 21px; line-height: 1.3; font-weight: 650; letter-spacing: -0.015em; }
+      .policy p { margin: 0 0 12px; }
+      .policy p:last-child { margin-bottom: 0; }
+      .policy ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+      .policy li { position: relative; padding-left: 22px; }
+      .policy li::before { content: ''; position: absolute; left: 2px; top: 0.62em; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+      strong { font-weight: 650; }
+      code { padding: 1px 6px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font: 500 0.86em 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+      a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+      a:hover { text-decoration-thickness: 2px; }
 
-      .brand-mark {
-        display: grid;
-        width: 2rem;
-        height: 2rem;
-        place-items: center;
-        border: 2px solid var(--accent);
-        border-radius: 50%;
-        color: var(--accent);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.1rem;
-      }
+      footer { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 28px; color: var(--muted); font-size: 14px; }
 
-      .updated {
-        color: var(--muted);
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.55fr);
-        gap: clamp(2rem, 8vw, 7rem);
-        align-items: end;
-        margin-bottom: 3.5rem;
-      }
-
-      .eyebrow {
-        margin: 0 0 0.8rem;
-        color: var(--accent);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      h1,
-      h2 {
-        font-weight: 400;
-        line-height: 1.08;
-      }
-
-      h1 {
-        max-width: 10ch;
-        margin: 0;
-        font-size: clamp(3.5rem, 9vw, 7.5rem);
-        letter-spacing: -0.04em;
-      }
-
-      .intro {
-        max-width: 28rem;
-        margin: 0 0 0.25rem;
-        color: var(--muted);
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
-      }
-
-      .policy {
-        display: grid;
-        grid-template-columns: minmax(11rem, 0.35fr) minmax(0, 1fr);
-        gap: 2rem clamp(2rem, 8vw, 7rem);
-        padding: clamp(1.5rem, 4vw, 4rem);
-        border: 1px solid var(--line);
-        background: rgba(255, 253, 247, 0.88);
-        box-shadow: var(--shadow);
-      }
-
-      .policy h2 {
-        margin: 0;
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
-      }
-
-      .policy section {
-        padding: 0 0 2.75rem;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .policy section + section {
-        padding-top: 2.75rem;
-      }
-
-      .policy section:last-child {
-        padding-bottom: 0;
-        border-bottom: 0;
-      }
-
-      .policy p {
-        margin: 0 0 1rem;
-      }
-
-      .policy p:last-child {
-        margin-bottom: 0;
-      }
-
-      .policy ul {
-        margin: 0;
-        padding-left: 1.25rem;
-      }
-
-      .policy li + li {
-        margin-top: 0.65rem;
-      }
-
-      strong,
-      code {
-        color: var(--accent);
-      }
-
-      code {
-        padding: 0.15rem 0.35rem;
-        border-radius: 0.25rem;
-        background: var(--accent-soft);
-        font-family: "Courier New", monospace;
-        font-size: 0.86em;
-      }
-
-      a {
-        color: var(--accent);
-      }
-
-      footer {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        color: var(--muted);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 0.78rem;
-      }
-
-      @media (max-width: 680px) {
-        .page {
-          width: min(100% - 1.25rem, 1120px);
-          padding-top: 1.25rem;
-        }
-
-        .masthead {
-          align-items: flex-start;
-          margin-bottom: 3rem;
-        }
-
-        .updated {
-          max-width: 8rem;
-          text-align: right;
-        }
-
-        .hero,
-        .policy {
-          grid-template-columns: 1fr;
-        }
-
-        .hero {
-          gap: 1.5rem;
-          margin-bottom: 2rem;
-        }
-
-        h1 {
-          font-size: clamp(3.5rem, 19vw, 6rem);
-        }
-
-        .policy {
-          gap: 1.5rem;
-          padding: 1.25rem;
-        }
-
-        .policy section + section {
-          padding-top: 2rem;
-        }
-
-        footer {
-          flex-direction: column;
-        }
+      @media (max-width: 560px) {
+        body { font-size: 16px; }
+        .hero { padding: 40px 0 24px; }
+        .intro { font-size: 17px; }
+        .glance { grid-template-columns: 1fr; }
+        .policy { padding: 4px 20px; border-radius: 16px; }
+        .policy section { padding: 22px 0; }
+        .wordmark { font-size: 26px; }
       }
     </style>
   </head>
   <body>
-    <main class="page">
-      <header class="masthead">
-        <a class="brand" href="./" aria-label="Restyler home">
-          <span class="brand-mark" aria-hidden="true">R</span>
-          Restyler
+    <div class="page">
+      <header class="top">
+        <a class="brand" href="./" aria-label="Restyler privacy policy">
+          <img src="favicon.svg" alt="" width="40" height="40">
+          <span class="wordmark">Restyler</span>
         </a>
-        <span class="updated">Last updated: 22 Sept, 2026</span>
+        <span class="tag">Privacy policy</span>
       </header>
 
-      <section class="hero" aria-labelledby="page-title">
-        <div>
-          <p class="eyebrow">Privacy policy</p>
-          <h1 id="page-title">Your style, your device.</h1>
-        </div>
-        <p class="intro">Restyler is a Chrome extension that lets you change how websites look.</p>
-      </section>
-
-      <article class="policy">
-        <section aria-labelledby="stored-title">
-          <h2 id="stored-title">What Restyler stores</h2>
-        </section>
-        <section>
-          <p>Restyler saves the following <strong>only on your device</strong>, using Chrome's local extension storage (<code>chrome.storage.local</code>):</p>
-          <ul>
-            <li>The hostnames of websites you restyle, and when you last changed them</li>
-            <li>Your style changes for each site: the CSS selector and a short text label for each element you pick, the colors, sizes and visibility you chose, quick-style settings (dark mode, hide images, text size), any custom CSS you write, and whether Restyler is on or off for that site</li>
-            <li>Your theme choice for the Restyler popup (Bright, Dark or Auto)</li>
-          </ul>
+      <main>
+        <section class="hero" aria-labelledby="title">
+          <p class="eyebrow">Last updated 22 September 2026</p>
+          <h1 id="title">Your styles stay <em>on your device.</em></h1>
+          <p class="intro">Restyler is a Chrome extension that lets you change how websites look. This page explains what it stores and what it never does.</p>
         </section>
 
-        <section aria-labelledby="does-not-title">
-          <h2 id="does-not-title">What Restyler does not do</h2>
-        </section>
-        <section>
-          <ul>
-            <li>It does not send any data to the developer or any third party. Restyler makes no network requests.</li>
-            <li>It does not use analytics, tracking, advertising or cookies.</li>
-            <li>It does not sell, share or transfer your data.</li>
-            <li>It does not require an account or sign-in.</li>
-          </ul>
-        </section>
+        <ul class="glance" aria-label="At a glance">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+            Stored only on your device
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg>
+            No network requests
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg>
+            No tracking, analytics or ads
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            No account or sign-in
+          </li>
+        </ul>
 
-        <section aria-labelledby="icons-title">
-          <h2 id="icons-title">Site icons</h2>
-        </section>
-        <section>
-          <p>The "All sites" list shows site icons from Chrome's own local favicon cache. No request is made to the websites or to any outside service to fetch them.</p>
-        </section>
+        <article class="policy">
+          <section aria-labelledby="stores">
+            <h2 id="stores">What Restyler stores</h2>
+            <p>Restyler saves the following <strong>only on your device</strong>, using Chrome's local extension storage (<code>chrome.storage.local</code>):</p>
+            <ul>
+              <li>The hostnames of websites you restyle, and when you last changed them</li>
+              <li>Your style changes for each site: the CSS selector and a short text label for each element you pick, the colors, sizes and visibility you chose, quick-style settings (dark mode, hide images, text size), any custom CSS you write, and whether Restyler is on or off for that site</li>
+              <li>Your theme choice for the Restyler popup (Bright, Dark or Auto)</li>
+            </ul>
+          </section>
 
-        <section aria-labelledby="deleting-title">
-          <h2 id="deleting-title">Deleting your data</h2>
-        </section>
-        <section>
-          <p>You can remove any site's changes from the extension's "All sites" tab. Uninstalling Restyler deletes all of its stored data.</p>
-        </section>
+          <section aria-labelledby="not">
+            <h2 id="not">What Restyler does not do</h2>
+            <ul>
+              <li>It does not send any data to the developer or any third party. Restyler makes no network requests.</li>
+              <li>It does not use analytics, tracking, advertising or cookies.</li>
+              <li>It does not sell, share or transfer your data.</li>
+              <li>It does not require an account or sign-in.</li>
+            </ul>
+          </section>
 
-        <section aria-labelledby="changes-title">
-          <h2 id="changes-title">Changes to this policy</h2>
-        </section>
-        <section>
-          <p>If this policy changes, the updated version will be posted on this page with a new date.</p>
-        </section>
+          <section aria-labelledby="icons">
+            <h2 id="icons">Site icons</h2>
+            <p>The "All sites" list shows site icons from Chrome's own local favicon cache. No request is made to the websites or to any outside service to fetch them.</p>
+          </section>
 
-        <section aria-labelledby="contact-title">
-          <h2 id="contact-title">Contact</h2>
-        </section>
-        <section>
-          <p>Questions: <a href="mailto:vk7259719@gmail.com">vk7259719@gmail.com</a></p>
-        </section>
-      </article>
+          <section aria-labelledby="delete">
+            <h2 id="delete">Deleting your data</h2>
+            <p>You can remove any site's changes from the extension's "All sites" tab. Uninstalling Restyler deletes all of its stored data.</p>
+          </section>
+
+          <section aria-labelledby="changes">
+            <h2 id="changes">Changes to this policy</h2>
+            <p>If this policy changes, the updated version will be posted on this page with a new date.</p>
+          </section>
+
+          <section aria-labelledby="contact">
+            <h2 id="contact">Contact</h2>
+            <p>Questions: <a href="mailto:vk7259719@gmail.com">vk7259719@gmail.com</a></p>
+          </section>
+        </article>
+      </main>
 
       <footer>
-        <span>Restyler Chrome extension</span>
-        <span>Privacy policy</span>
+        <span>Restyler for Chrome</span>
+        <span>Last updated 22 September 2026</span>
       </footer>
-    </main>
+    </div>
   </body>
 </html>
