@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Privacy policy for the Restyler Chrome extension.">
+    <title>Restyler | Privacy Policy</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17221f;
+        --muted: #64716c;
+        --paper: #f6f5ef;
+        --panel: #fffdf7;
+        --line: #d9dfd8;
+        --accent: #bf4e2f;
+        --accent-soft: #f5ddd3;
+        --shadow: 0 24px 60px rgba(42, 54, 47, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 8% 8%, rgba(191, 78, 47, 0.12), transparent 23rem),
+          linear-gradient(135deg, #f6f5ef 0%, #eef2eb 100%);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.7;
+      }
+
+      .page {
+        width: min(100% - 2rem, 1120px);
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+      }
+
+      .masthead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 4.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        color: var(--ink);
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        color: var(--accent);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.1rem;
+      }
+
+      .updated {
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.55fr);
+        gap: clamp(2rem, 8vw, 7rem);
+        align-items: end;
+        margin-bottom: 3.5rem;
+      }
+
+      .eyebrow {
+        margin: 0 0 0.8rem;
+        color: var(--accent);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        font-weight: 400;
+        line-height: 1.08;
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin: 0;
+        font-size: clamp(3.5rem, 9vw, 7.5rem);
+        letter-spacing: -0.04em;
+      }
+
+      .intro {
+        max-width: 28rem;
+        margin: 0 0 0.25rem;
+        color: var(--muted);
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+      }
+
+      .policy {
+        display: grid;
+        grid-template-columns: minmax(11rem, 0.35fr) minmax(0, 1fr);
+        gap: 2rem clamp(2rem, 8vw, 7rem);
+        padding: clamp(1.5rem, 4vw, 4rem);
+        border: 1px solid var(--line);
+        background: rgba(255, 253, 247, 0.88);
+        box-shadow: var(--shadow);
+      }
+
+      .policy h2 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+      }
+
+      .policy section {
+        padding: 0 0 2.75rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .policy section + section {
+        padding-top: 2.75rem;
+      }
+
+      .policy section:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .policy p {
+        margin: 0 0 1rem;
+      }
+
+      .policy p:last-child {
+        margin-bottom: 0;
+      }
+
+      .policy ul {
+        margin: 0;
+        padding-left: 1.25rem;
+      }
+
+      .policy li + li {
+        margin-top: 0.65rem;
+      }
+
+      strong,
+      code {
+        color: var(--accent);
+      }
+
+      code {
+        padding: 0.15rem 0.35rem;
+        border-radius: 0.25rem;
+        background: var(--accent-soft);
+        font-family: "Courier New", monospace;
+        font-size: 0.86em;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        color: var(--muted);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.78rem;
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          width: min(100% - 1.25rem, 1120px);
+          padding-top: 1.25rem;
+        }
+
+        .masthead {
+          align-items: flex-start;
+          margin-bottom: 3rem;
+        }
+
+        .updated {
+          max-width: 8rem;
+          text-align: right;
+        }
+
+        .hero,
+        .policy {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          gap: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        h1 {
+          font-size: clamp(3.5rem, 19vw, 6rem);
+        }
+
+        .policy {
+          gap: 1.5rem;
+          padding: 1.25rem;
+        }
+
+        .policy section + section {
+          padding-top: 2rem;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <a class="brand" href="./" aria-label="Restyler home">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          Restyler
+        </a>
+        <span class="updated">Last updated: 22 Sept, 2026</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Privacy policy</p>
+          <h1 id="page-title">Your style, your device.</h1>
+        </div>
+        <p class="intro">Restyler is a Chrome extension that lets you change how websites look.</p>
+      </section>
+
+      <article class="policy">
+        <section aria-labelledby="stored-title">
+          <h2 id="stored-title">What Restyler stores</h2>
+        </section>
+        <section>
+          <p>Restyler saves the following <strong>only on your device</strong>, using Chrome's local extension storage (<code>chrome.storage.local</code>):</p>
+          <ul>
+            <li>The hostnames of websites you restyle, and when you last changed them</li>
+            <li>Your style changes for each site: the CSS selector and a short text label for each element you pick, the colors, sizes and visibility you chose, quick-style settings (dark mode, hide images, text size), any custom CSS you write, and whether Restyler is on or off for that site</li>
+            <li>Your theme choice for the Restyler popup (Bright, Dark or Auto)</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="does-not-title">
+          <h2 id="does-not-title">What Restyler does not do</h2>
+        </section>
+        <section>
+          <ul>
+            <li>It does not send any data to the developer or any third party. Restyler makes no network requests.</li>
+            <li>It does not use analytics, tracking, advertising or cookies.</li>
+            <li>It does not sell, share or transfer your data.</li>
+            <li>It does not require an account or sign-in.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="icons-title">
+          <h2 id="icons-title">Site icons</h2>
+        </section>
+        <section>
+          <p>The "All sites" list shows site icons from Chrome's own local favicon cache. No request is made to the websites or to any outside service to fetch them.</p>
+        </section>
+
+        <section aria-labelledby="deleting-title">
+          <h2 id="deleting-title">Deleting your data</h2>
+        </section>
+        <section>
+          <p>You can remove any site's changes from the extension's "All sites" tab. Uninstalling Restyler deletes all of its stored data.</p>
+        </section>
+
+        <section aria-labelledby="changes-title">
+          <h2 id="changes-title">Changes to this policy</h2>
+        </section>
+        <section>
+          <p>If this policy changes, the updated version will be posted on this page with a new date.</p>
+        </section>
+
+        <section aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact</h2>
+        </section>
+        <section>
+          <p>Questions: <a href="mailto:vk7259719@gmail.com">vk7259719@gmail.com</a></p>
+        </section>
+      </article>
+
+      <footer>
+        <span>Restyler Chrome extension</span>
+        <span>Privacy policy</span>
+      </footer>
+    </main>
+  </body>
+</html>
